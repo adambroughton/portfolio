@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/calculatorapp/style.css">
+    <link rel="stylesheet" href="/weatherapp/style.css">
+    <link rel="stylesheet" href="/todolistapp/style.css">
+    <title>Adam Broughton Portfolio</title>
+
+    <script defer src="/main.js"></script>
+    <script defer src="/weatherapp/script.js"></script>
+    <script defer src="/todolistapp/script.js"></script>
+</head>
+
+<body>
+    <div id="header" class="hidden">
+        <div class="container">
+            <div class="header-text">
+                <p>Welcome,</p>
+                <h1>To Adam's Portfolio</h1>
+            </div>
+        </div>
+    </div>
+    <div id="apps">
+        <div class="apps hidden" id="weatherapp">
+            <h2>Weather App:</h2>
+            <div class="weatherapp">
+                <div class="card">
+                    <div class="search">
+                        <input type="text" placeholder="enter a place" spellcheck="false">
+                        <button><img src="/weatherapp/images/searchicon.png"></button>
+                    </div>
+                    <div class="error">
+                        <p>Invalid name</p>
+                    </div>
+                    <div class="weather">
+                        <img src="/weatherapp/images/clear.png" class="weather-icon">
+                        <h1 class="temp">22°C</h1>
+                        <h2 class="city">Norwich</h2>
+                        <div class="details">
+                            <div class="col">
+                                <img src="/weatherapp/images/humidity.png">
+                                <div>
+                                    <p class="humidity">50%</p>
+                                    <p>Humidity</p>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <img src="/weatherapp/images/wind.png">
+                                <div>
+                                    <p class="wind">15 mp/h</p>
+                                    <p>Wind Speed</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="apps hidden" id="todo-list">
+            <h2>To-do List:</h2>
+            <div class="todolist-app">
+                <div class="todo-app">
+                    <h2>To-do List<img src="/todolistapp/images/icon.png"></h2>
+                    <div class="row">
+                        <input type="text" id="input-box" placeholder="create a task">
+                        <button id="todolistbtn" onclick="addTask()">Add</button>
+                    </div>
+                    <ul id="list-container">
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="apps hidden" id="calculator">
+            <h2>Calculator:</h2>
+            <div class="calculatorapp">
+                <div class="container">
+                    <div class="calculator">
+                        <form>
+                            <div class="display">
+                                <input type="text" name="display">
+                            </div>
+                            <div>
+                                <input type="button" value="AC" onclick="display.value = '' " class="operator key">
+                                <input type="button" value="DE"
+                                    onclick="display.value = display.value.toString().slice(0,-1)" class="operator key">
+                                <input type="button" value="." onclick="display.value += '.' " class="operator key">
+                                <input type="button" value="/" onclick="display.value += '/' " class="operator key">
+                            </div>
+                            <div>
+                                <input type="button" value="7" onclick="display.value += '7' " class="key">
+                                <input type="button" value="8" onclick="display.value += '8' " class="key">
+                                <input type="button" value="9" onclick="display.value += '9' " class="key">
+                                <input type="button" value="*" onclick="display.value += '*' " class="operator key">
+                            </div>
+                            <div>
+                                <input type="button" value="4" onclick="display.value += '4' " class="key">
+                                <input type="button" value="5" onclick="display.value += '5' " class="key">
+                                <input type="button" value="6" onclick="display.value += '6' " class="key">
+                                <input type="button" value="-" onclick="display.value += '-' " class="operator key">
+                            </div>
+                            <div>
+                                <input type="button" value="1" onclick="display.value += '1' " class="key">
+                                <input type="button" value="2" onclick="display.value += '2' " class="key">
+                                <input type="button" value="3" onclick="display.value += '3' " class="key">
+                                <input type="button" value="+" onclick="display.value += '+' " class="operator key">
+                            </div>
+                            <input type="button" value="00" onclick="display.value += '00'" class="key">
+                            <input type="button" value="0" onclick="display.value += '0'" class="key">
+                            <input type="button" value="=" class="equal operator key"
+                                onclick="display.value = eval(display.value) ">
+                    </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer>
+        <p> 2023 © by Adam Broughton</p>
+    </footer>
+</body>
+
+</html>
